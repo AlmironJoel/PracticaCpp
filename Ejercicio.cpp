@@ -4,7 +4,10 @@ using namespace std;
 int main(int argc, char const *argv[])
 //funciones
 int produc (int n1,int n2);
+
 {
+
+    int n4;
 int r=0;
 int n1,n2;
 
