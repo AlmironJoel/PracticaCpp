@@ -8,6 +8,7 @@ int produc (int n1,int n2);
 {
 
     int n4;
+    int n6;
 int r=0;
 int n1,n2;
 
