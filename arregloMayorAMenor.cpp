@@ -7,7 +7,7 @@ using namespace std;
 // y 9 no lo está.
 
 //Funciones
-int cargarNumeros (int n[10]){
+void cargarNumeros (int n[10]){
     for (int i = 0; i < 10; i++)
     {
     int num;
@@ -17,11 +17,16 @@ int cargarNumeros (int n[10]){
     }
 }
 
-// int verificarOrden(Vnum[10]){
+int verificarOrden(int Vnum[10]){
+    for (int i = 0; i < 9; i++) {
+        if (Vnum[i] > Vnum[i + 1]) {
+            return false;
+        }
+    }
+    return true;   
+ }
 
-// }
-
-int mostrarNumeros(int n[10]){
+void mostrarNumeros(int n[10]){
     for (int i = 0; i < 10; i++)
     {
         cout<<n[i]<<endl;
@@ -33,8 +38,14 @@ int main(int argc, char const *argv[])
 {
     int Vnum[10];
     cargarNumeros(Vnum);
-    // verificarOrden(Vnum);
-    mostrarNumeros(Vnum);
-
+    bool Ban = verificarOrden(Vnum);
+    
+    if (Ban){
+        cout<< "Los numeros estan ordenados de menor a mayor"<< endl;
+    }else {
+        cout<< "Los numeros no estan ordenados"<< endl;
+    }
+    cout<< "Lista de numeros: "<<endl;
+    mostrarNumeros(Vnum);    
     return 0;
 }
