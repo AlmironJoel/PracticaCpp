@@ -26,6 +26,14 @@ void initializeMatriz(int Matriz [10][2]){
     }
 }
 
+void ponerEnFalse(bool VnoVentas[10]){
+    for (int i = 0; i < 10; i++)
+    {
+        VnoVentas[i]=false;
+    }
+    
+}
+
 void charge(int Matriz [10][2]){
     int nArt;
     int nSale;
@@ -56,17 +64,24 @@ void charge(int Matriz [10][2]){
     //A
     int max=0;
     int listMax;
+    //B
+    bool VnoVentas[10];
+    ponerEnFalse(VnoVentas);
+
+    
     for (int i = 0; i < 10; i++){
         for (int j = 0; j < 1; j++){
             if (Matriz[i][j+1]>max){
                 max=Matriz[i][j+1];
                 listMax=Matriz[i][j];
             }
+            if (Matriz[i][j+1]==0){
+                VnoVentas[i]=true; 
+            }//creamos un array de banderas en false que pasa a true cuando el valor de las ventas es igual a cero, falta trabajar
         } 
     }
     cout<< "El maximo es : "<<max<<"de la lista : "<<listMax<< endl;
 
-    //B
 
 }//Fincharge
 
