@@ -33,6 +33,24 @@ void ponerEnFalse(bool VnoVentas[10]){
     }
     
 }
+void mostrarBan(bool VnoVentas[10]){
+    for (int i = 0; i < 10; i++)
+    {
+        if (VnoVentas[i]==true)
+        {
+           cout<< "No se registro Ventas en la Lista : "<<i+1<<endl;
+        }
+        
+    }
+    
+}
+
+void ponerEnCero(int countC[10]){
+    for (int i = 0; i < 10; i++){
+        countC[i]=0;
+    }
+    
+}
 
 void charge(int Matriz [10][2]){
     int nArt;
@@ -42,6 +60,9 @@ void charge(int Matriz [10][2]){
     cin>>nArt;
     cout<<"ingrese valor de la venta...";
     cin>>nSale;
+    //C
+    int countC[10];
+    ponerEnCero(countC);
     
     while (nArt!=0){     
 
@@ -52,6 +73,7 @@ void charge(int Matriz [10][2]){
             if (Matriz[i][j]==nArt){
                 Matriz[i][j+1]+=nSale;
                 cout<<"Valor agregado exitosamente en la posicion : "<<Matriz[i][j]<<endl;
+                countC[i]++;
             }
         }        
     }
@@ -67,7 +89,7 @@ void charge(int Matriz [10][2]){
     //B
     bool VnoVentas[10];
     ponerEnFalse(VnoVentas);
-
+    
     
     for (int i = 0; i < 10; i++){
         for (int j = 0; j < 1; j++){
@@ -75,13 +97,17 @@ void charge(int Matriz [10][2]){
                 max=Matriz[i][j+1];
                 listMax=Matriz[i][j];
             }
+
             if (Matriz[i][j+1]==0){
                 VnoVentas[i]=true; 
-            }//creamos un array de banderas en false que pasa a true cuando el valor de las ventas es igual a cero, falta trabajar
+            }
         } 
     }
-    cout<< "El maximo es : "<<max<<"de la lista : "<<listMax<< endl;
-
+    
+    //Ressultados
+    cout<< "El maximo es : "<<max<<" de la lista : "<<listMax<< endl;
+    mostrarBan(VnoVentas);
+    cout<<"Cantidad de unidades vendidas del articulo 10 son: "<<countC[9]<<endl;
 
 }//Fincharge
 
@@ -100,6 +126,6 @@ int main(int argc, char const *argv[])
     int Matriz [10][2];
     initializeMatriz(Matriz);
     charge(Matriz);
-     showMatriz(Matriz);
+    showMatriz(Matriz);
     return 0;
 }
