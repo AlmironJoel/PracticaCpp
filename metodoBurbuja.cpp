@@ -18,7 +18,6 @@ void ingresarNum(int Vnum[10],int orden[10]){
     }
     cout<<"Lista de numeros Cargados!"<<endl;
 }
-
 void mostrarArray(int Vnum[10],int orden[10]){
     for (int i = 0; i < 10; i++){
         cout<<"El Numero: "<<Vnum[i]<<" Se encontraba originalmente en el indice : "<<orden[i]<<endl;
