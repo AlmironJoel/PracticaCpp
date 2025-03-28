@@ -12,10 +12,9 @@
 // El último registro de este lote tiene número de cliente cero y no debe procesarse. Desarrollar el
 // programa que determine e imprima:
 // a) Un listado de las ventas realizadas, con el siguiente formato:
-
 // Listado de ventas
-// Nro. Cliente Nro. Artículo Cantidad Vendida Importe Total
-// 99 99 999 999.99
+// Nro. Cliente/ Nro. Artículo/ Cantidad Vendida /Importe Total
+//      99          99               999            999.99
 // b) Informar cuál es el número de cliente que más compró en total (en pesos).
 // c) Informar cada uno de los números de los artículos que no hayan registrado ventas.
 
@@ -69,6 +68,10 @@ void mostrar(loteCarga Vregistro[4]){
     
 }
 
+void setList (listaDeVentas VlistaVentas[300]){
+
+}
+
 void proceso(loteCarga Vregisto[4],loteRegistro Vproceso[4],listaDeVentas VlistaVentas[300]){
 //pedir datos
  int NumeroCliente,numArticulo,CantidadVendida;
@@ -80,10 +83,11 @@ void proceso(loteCarga Vregisto[4],loteRegistro Vproceso[4],listaDeVentas Vlista
  cin>>CantidadVendida;
  int indice = 0;
  while (NumeroCliente!=0){
-    
+    for (int i = 0; i < 4; i++){
+        if (numArticulo==Vproceso[i].numArt){
 
-
-
+        }else{cout<<"Error numero de articulo no encontrado"<<endl;}
+    }
     cout<<"ingrese el numero de cliente"<<endl;
     cin>>NumeroCliente;
     cout<<"ingrese el numero de Articulo"<<endl;
@@ -94,11 +98,12 @@ void proceso(loteCarga Vregisto[4],loteRegistro Vproceso[4],listaDeVentas Vlista
  
 }
 
-
+//todo main
 int main(int argc, char const *argv[]){
     loteCarga Vregistro[4];
     loteRegistro Vproceso[4];
     listaDeVentas VlistaVentas[300];
+    setList(VlistaVentas);
     cargarLote(Vregistro);
     proceso(Vregistro,Vproceso,VlistaVentas);
     mostrar(Vregistro);
