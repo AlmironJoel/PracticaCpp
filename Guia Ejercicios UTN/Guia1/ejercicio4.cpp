@@ -6,8 +6,14 @@ using namespace std;
 int main(int argc, char const *argv[]){
     int asientosTotal,pasajeros;
     cout<<"ingrese la cantidad total de asientos del Avion"<<endl;
+    cin>>asientosTotal;
     cout<<"ingrese la cantidad de pasajeros"<<endl;
     cin>>pasajeros;
+    int asientosOcupados;
+    asientosOcupados=(pasajeros*100)/asientosTotal;
+    int asientosDesocupados;
+    asientosDesocupados= 100-asientosOcupados;
+    cout<<"El porcentaje de asiento ocupados es :%"<<asientosOcupados<<" y la cantidad de asientos desocupados son el %"<<asientosDesocupados<<endl;
     return 0;
 }
 
