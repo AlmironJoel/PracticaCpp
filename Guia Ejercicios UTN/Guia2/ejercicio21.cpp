@@ -5,7 +5,7 @@
 // Calcular e informar:
 //* Cantidad total de carteras vendidas en total.
 //*Cuántas carteras quedaron de cada tipo.
-// Los colores de carteras que no se vendieron.
+//* Los colores de carteras que no se vendieron.
 // NOTA: Ninguna venta superará las 10 carteras
 
 #include <iostream>
