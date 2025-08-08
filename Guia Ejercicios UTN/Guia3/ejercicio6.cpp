@@ -3,6 +3,7 @@
 // Ejemplo B: Se ingresa como N el valor 6, y luego se ingresa: -10, -3, -2, 0, -5, -4. Se listará: Cantidad de Positivos: 0
 
 #include <iostream>
+
 using namespace std;
 
 int main(int argc, char const *argv[]){
