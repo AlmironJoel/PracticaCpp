@@ -7,17 +7,24 @@ using namespace std;
 int main() {
     int n ,maxNeg=0,minPos=0;
     bool banNeg=false,banPos=false;
-    cout<<"ingrese los datos"<<endl;
-    cin>>n;
-    if(n<0){
-        if (!banNeg){
-            maxNeg=n;
-            banNeg=true;
-        }else if (n>maxNeg){
-            maxNeg=n;
-        }
-        
-        
+    for (int i = 0; i < 5; i++){
+        cout<<"Ronda : "<<i+1<<"ingrese el numero"<<endl;
+        cin>>n;
+        if(n<0){
+            if (!banNeg){
+                maxNeg=n;
+                banNeg=true;
+            }else if (n>maxNeg){
+                maxNeg=n;
+            }        
+        }else if (!banPos){
+                minPos=n;
+                banPos=true;
+            }else if (n<minPos){
+                minPos=n;
+            }
     }
+    
+    cout<<"MINIMO POSITIVO : "<<minPos<<" , maximo negativo : "<<maxNeg<<"/n";
     return 0;
 }
