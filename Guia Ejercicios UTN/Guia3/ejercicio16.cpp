@@ -37,6 +37,6 @@ int main() {
         }
     }
     cout<<"El primer maximo ES: "<<pMayor<<" y el segundo maximos ES: "<<sMayor;
-    
+ 
     return 0;
 }
