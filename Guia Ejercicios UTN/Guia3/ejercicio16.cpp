@@ -6,6 +6,7 @@ Ejemplo C: -4, -8, -12, -20, -10 el resultado será -4 y -8
 Ejemplo D: 100, 20, 5, -15, 70, el resultado será 100 y 70.  
 Ejemplo E: -100, -20, -5, 15, -70, el resultado será 15 y -5.*/
 #include <iostream>
+//420318251 rec//
 
 using namespace std;
 
